@@ -124,9 +124,11 @@ function App() {
           </p>
 
           <div className="flex flex-col gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-2">
-            <Button size="lg" className="text-lg sm:text-xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto">
-              🚀 Quero Começar Agora
-            </Button>
+            <a href="https://pay.kiwify.com.br/BPJAAN2" target="_blank" rel="noopener noreferrer">
+  <Button size="lg" className="text-lg sm:text-xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto">
+    🚀 Quero Começar Agora
+  </Button>
+</a>
             <div className="flex items-center text-gray-600 text-base sm:text-lg">
               <Users className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
               <span>Mais de 1.000 pessoas já se inscreveram</span>
