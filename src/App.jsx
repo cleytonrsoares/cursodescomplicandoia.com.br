@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -12,6 +12,40 @@ import casalIdosoLaptop from './assets/casal-idoso-laptop.jpg'
 
 function App() {
   const [selectedPlan, setSelectedPlan] = useState('completo')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    
+    // FIX DEFINITIVO DO BOTÃO - Implementa após React carregar
+    const timer = setTimeout(() => {
+      const buttons = Array.from(document.querySelectorAll('button')).filter(btn => 
+        btn.textContent.includes('Quero Começar Agora') || btn.textContent.includes('Começar Agora')
+      );
+      
+      buttons.forEach(button => {
+        console.log('✅ Botão encontrado! Aplicando fix definitivo...');
+        
+        // Remove event listeners existentes e adiciona novo
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('🚀 Redirecionando para Kiwify...');
+          window.open('https://pay.kiwify.com.br/BPJAAN2', '_blank');
+        });
+        
+        newButton.style.cursor = 'pointer';
+        console.log('✅ Fix aplicado com sucesso!');
+      });
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [])
+
+  if (!mounted) return null
 
   const testimonials = [
     {
@@ -124,7 +158,14 @@ function App() {
           </p>
 
           <div className="flex flex-col gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-2">
-            <Button size="lg" className="text-lg sm:text-xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto">
+            <Button 
+              size="lg" 
+              className="text-lg sm:text-xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto"
+              onClick={() => {
+                console.log('🚀 Redirecionando para Kiwify via onClick...');
+                window.open('https://pay.kiwify.com.br/BPJAAN2', '_blank');
+              }}
+            >
               🚀 Quero Começar Agora
             </Button>
             <div className="flex items-center text-gray-600 text-base sm:text-lg">
