@@ -17,39 +17,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <script>
-    (function( ) {
-        function initButtonFix() {
-            setTimeout(function() {
-                const button = Array.from(document.querySelectorAll('button')).find(btn => 
-                    btn.textContent.includes('Quero Começar Agora')
-                );
-                
-                if (button) {
-                    console.log('✅ Botão encontrado! Aplicando fix definitivo...');
-                    const newButton = button.cloneNode(true);
-                    button.parentNode.replaceChild(newButton, button);
-                    newButton.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('🚀 Redirecionando para Kiwify...');
-                        window.open('https://pay.kiwify.com.br/BPJAAN2', '_blank' );
-                    });
-                    newButton.style.cursor = 'pointer';
-                    console.log('✅ Fix aplicado com sucesso!');
-                } else {
-                    setTimeout(initButtonFix, 1000);
-                }
-            }, 2000);
-        }
-        
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initButtonFix);
-        } else {
-            initButtonFix();
-        }
-        setTimeout(initButtonFix, 5000);
-    })();
-    </script>
 </body>
 </html>
+
