@@ -45,9 +45,7 @@ function App() {
     return () => clearTimeout(timer);
   }, [])
 
-  if (!mounted) return null
-
-  const testimonials = [
+  if (!mounted) return nul  const testimonials = [
     {
       name: "Maria Silva, São Paulo",
       text: "Nunca imaginei que já usava IA! Agora converso com o ChatGPT todos os dias e impressiono meus netos!",
@@ -57,11 +55,6 @@ function App() {
       name: "João Santos, Rio de Janeiro", 
       text: "A IAsmim me ensinou de um jeito tão simples que até eu entendi! Agora sou o 'vovô tech' da família.",
       rating: 5
-    },
-    {
-      name: "Carmen Oliveira, Belo Horizonte",
-      text: "O grupo IA Masters é incrível! Fiz amizades e aprendo algo novo todo dia. Recomendo!",
-      rating: 5
     }
   ]
 
@@ -70,51 +63,45 @@ function App() {
       id: 'basico',
       name: 'Básico',
       price: 196,
-      installments: '4x R$ 49',
+      installments: '10x R$ 23,56',
       description: 'Ideal para começar',
       features: [
         'Acesso ao curso completo (7 módulos)',
-        'Aulas via WhatsApp com IAsmim',
-        'Suporte por chat',
-        'Certificado digital',
-        'Acesso por 12 meses'
+        'Aulas via WhatsApp com a IAsmim',
+        'Suporte humano por email',
+        'Acesso ao curso por 12 semanas'
       ]
     },
     {
       id: 'completo',
       name: 'Completo',
       price: 294,
-      installments: '6x R$ 49',
+      installments: '10x R$ 35,33',
       originalPrice: 497,
       description: 'Mais escolhido',
       popular: true,
       features: [
-        'Tudo do plano Básico',
-        'Grupo IA Masters exclusivo',
+        'Tudo do Plano Básico',
         'Laboratório prático com IAs',
-        'ChatGPT integrado no WhatsApp',
-        'Ensino de prompts avançados',
-        'Suporte prioritário',
-        'Bônus: Guia de Segurança Digital',
-        'Acesso vitalício'
+        'ChatGPT integrado ao WhatsApp durante o curso',
+        'Suporte humano por email e whatsapp',
+        'Certificado digital de conclusão do curso',
+        'Acesso ao curso por 52 semanas'
       ]
     },
     {
       id: 'premium',
       name: 'Premium',
       price: 490,
-      installments: '10x R$ 49',
+      installments: '10x R$ 58,89',
       originalPrice: 797,
       description: 'Experiência completa',
       features: [
-        'Tudo do plano Completo',
+        'Tudo do Plano Completo',
         'Acesso antecipado a novidades',
-        'Certificado físico enviado em casa',
-        'Conteúdos exclusivos mensais',
-        'Live mensal com especialistas',
-        'Kit Descomplicando IA (camiseta + caneca)',
-        'Suporte VIP 24/7',
-        'Acesso vitalício + atualizações'
+        'Acesso a 1 aula de monetização com IA (com mentor)',
+        'Certificador digital e físico de conclusão do curso',
+        'Acesso vitalício ao curso'
       ]
     }
   ]
@@ -146,9 +133,9 @@ function App() {
           </Badge>
           
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight px-2">
-            Descubra que Você
+            Chegou a hora de você{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              {" "}Já é Tech!
+              dominar IA!
             </span>
           </h1>
           
@@ -162,15 +149,15 @@ function App() {
               size="lg" 
               className="text-lg sm:text-xl px-8 py-6 sm:px-12 sm:py-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full sm:w-auto"
               onClick={() => {
-                console.log('🚀 Redirecionando para Kiwify via onClick...');
-                window.open('https://pay.kiwify.com.br/BPJAAN2', '_blank');
+                console.log('🎯 Scrolling para seção de planos...');
+                document.getElementById('planos')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               🚀 Quero Começar Agora
             </Button>
             <div className="flex items-center text-gray-600 text-base sm:text-lg">
               <Users className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-              <span>Mais de 1.000 pessoas já se inscreveram</span>
+              <span>Não perca tempo - faça como dezenas de pessoas: inscreva-se!</span>
             </div>
           </div>
 
@@ -196,26 +183,24 @@ function App() {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-1 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {/* Medo da Tecnologia */}
             <Card className="border-red-200 bg-red-50 p-4 sm:p-6">
               <CardContent className="pt-4 sm:pt-6">
-                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
-                  <div className="w-full md:w-1/3">
+                <div className="flex flex-col items-center gap-4 sm:gap-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-red-800 text-center">
+                    Medo da Tecnologia
+                  </h3>
+                  <div className="w-full">
                     <img 
                       src="/images/idoso-medo-tecnologia.jpg" 
                       alt="Pessoa idosa confusa olhando para computador"
                       className="w-full h-40 sm:h-48 object-cover rounded-xl"
                     />
                   </div>
-                  <div className="w-full md:w-2/3 text-center md:text-left">
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-red-800">
-                      Medo da Tecnologia
-                    </h3>
-                    <p className="text-gray-600 text-base sm:text-lg">
-                      "IA é muito complicado para mim. Isso é coisa de jovem."
-                    </p>
-                  </div>
+                  <p className="text-gray-600 text-base sm:text-lg text-center">
+                    "IA é muito complicado para mim. Isso é coisa de jovem."
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -223,22 +208,20 @@ function App() {
             {/* Sentimento de Exclusão */}
             <Card className="border-orange-200 bg-orange-50 p-4 sm:p-6">
               <CardContent className="pt-4 sm:pt-6">
-                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
-                  <div className="w-full md:w-1/3">
+                <div className="flex flex-col items-center gap-4 sm:gap-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-orange-800 text-center">
+                    Sentimento de Exclusão
+                  </h3>
+                  <div className="w-full">
                     <img 
                       src="/images/idoso-sozinho-banco.jpg" 
                       alt="Pessoa idosa sozinha em banco de praça"
                       className="w-full h-40 sm:h-48 object-cover rounded-xl"
                     />
                   </div>
-                  <div className="w-full md:w-2/3 text-center md:text-left">
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-orange-800">
-                      Sentimento de Exclusão
-                    </h3>
-                    <p className="text-gray-600 text-base sm:text-lg">
-                      "Todo mundo fala de ChatGPT, mas eu não entendo nada."
-                    </p>
-                  </div>
+                  <p className="text-gray-600 text-base sm:text-lg text-center">
+                    "Todo mundo fala de ChatGPT, mas eu não entendo nada."
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -246,22 +229,20 @@ function App() {
             {/* Não Sabe Por Onde Começar */}
             <Card className="border-yellow-200 bg-yellow-50 p-4 sm:p-6">
               <CardContent className="pt-4 sm:pt-6">
-                <div className="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
-                  <div className="w-full md:w-1/3">
+                <div className="flex flex-col items-center gap-4 sm:gap-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-yellow-800 text-center">
+                    Não Sabe Por Onde Começar
+                  </h3>
+                  <div className="w-full">
                     <img 
                       src="/images/idosa-confusa.jpg" 
                       alt="Pessoa idosa confusa e em dúvida"
                       className="w-full h-40 sm:h-48 object-cover rounded-xl"
                     />
                   </div>
-                  <div className="w-full md:w-2/3 text-center md:text-left">
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-yellow-800">
-                      Não Sabe Por Onde Começar
-                    </h3>
-                    <p className="text-gray-600 text-base sm:text-lg">
-                      "Quero aprender, mas os cursos são muito técnicos."
-                    </p>
-                  </div>
+                  <p className="text-gray-600 text-base sm:text-lg text-center">
+                    "Quero aprender, mas os cursos são muito técnicos."
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -288,7 +269,7 @@ function App() {
                   <img 
                     src="/images/iasmim.png" 
                     alt="IAsmim - Sua assistente virtual especializada em IA"
-                    className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+                    className="w-full sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain max-w-[85%] mx-auto sm:max-w-none"
                   />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6">Conheça a IAsmim</h3>
@@ -325,7 +306,7 @@ function App() {
                   <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-semibold mb-3">Método "Descoberta"</h4>
+                  <h4 className="text-lg sm:text-2xl font-semibold mb-2 sm:mb-3">Método "Descoberta"</h4>
                   <p className="opacity-90 text-lg">Não é estudo chato. São descobertas incríveis sobre o que você já faz!</p>
                 </div>
               </div>
@@ -353,7 +334,7 @@ function App() {
                 Junte-se a milhares de pessoas que descobriram que tecnologia pode ser simples, 
                 divertida e uma ótima forma de se conectar com a família!
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-xl text-gray-600 mb-6">
                 Nossos alunos não apenas aprendem IA - eles se tornam os "experts" da família 
                 e ensinam os próprios netos!
               </p>
@@ -365,7 +346,7 @@ function App() {
       {/* Course Modules */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
               O que Você Vai Descobrir
             </h2>
@@ -434,64 +415,6 @@ function App() {
         </div>
       </section>
 
-      {/* IA Masters Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200 text-lg px-6 py-3">
-              🏆 Exclusivo do nosso curso
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-              Sistema IA Masters
-            </h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-              Aprenda em grupo, faça amizades e compete de forma saudável com pessoas da sua região
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <img 
-                src={casalIdosoLaptop} 
-                alt="Casal aprendendo juntos no computador" 
-                className="rounded-2xl shadow-lg w-full"
-              />
-            </div>
-            <div className="space-y-8">
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold mb-3">Grupos Regionais</h3>
-                  <p className="text-gray-600 text-lg">8-12 pessoas da sua região em grupos WhatsApp exclusivos</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Trophy className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold mb-3">Classificação Semanal</h3>
-                  <p className="text-gray-600 text-lg">Master da Semana, Mentor da Semana e outras conquistas</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Heart className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold mb-3">Parceiros de Estudo</h3>
-                  <p className="text-gray-600 text-lg">Duplas que se ajudam mutuamente na jornada de aprendizado</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -528,7 +451,7 @@ function App() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section id="planos" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
@@ -578,6 +501,15 @@ function App() {
                   <Button 
                     className={`w-full text-lg py-6 ${plan.popular ? 'bg-purple-600 hover:bg-purple-700' : ''}`}
                     size="lg"
+                    onClick={() => {
+                      const kiwifyLinks = {
+                        'basico': 'https://pay.kiwify.com.br/BPJAAN2',
+                        'completo': 'https://pay.kiwify.com.br/VefhRUM', 
+                        'premium': 'https://pay.kiwify.com.br/88iRBHZ'
+                      };
+                      console.log(`🚀 Redirecionando para checkout ${plan.name}...`);
+                      window.open(kiwifyLinks[plan.id], '_blank');
+                    }}
                   >
                     Escolher {plan.name}
                   </Button>
@@ -586,22 +518,6 @@ function App() {
             ))}
           </div>
           
-          <div className="text-center mt-16">
-            <div className="flex flex-wrap justify-center items-center space-x-8 text-lg text-gray-600">
-              <div className="flex items-center mb-4">
-                <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                Garantia de 7 dias
-              </div>
-              <div className="flex items-center mb-4">
-                <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                Certificado incluso
-              </div>
-              <div className="flex items-center mb-4">
-                <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                Suporte especializado
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -627,10 +543,6 @@ function App() {
               {
                 question: "E se eu não conseguir acompanhar?",
                 answer: "Você aprende no seu ritmo! As aulas ficam salvas no WhatsApp e você pode rever quantas vezes quiser. Além disso, tem suporte humano sempre disponível."
-              },
-              {
-                question: "O que é o Sistema IA Masters?",
-                answer: "São grupos pequenos (8-12 pessoas) da sua região onde vocês aprendem juntos, se ajudam e fazem amizades. É como um clube de estudos divertido!"
               },
               {
                 question: "Posso usar o ChatGPT direto no WhatsApp?",
@@ -659,7 +571,7 @@ function App() {
             Pronto para Descobrir que Você Já é Tech?
           </h2>
           <p className="text-lg sm:text-2xl mb-8 sm:mb-12 opacity-90 px-2">
-            Junte-se a mais de 1.000 pessoas que já descobriram o poder da IA
+            Não perca tempo - faça como dezenas de pessoas: inscreva-se!
           </p>
           
           <div className="bg-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-10 backdrop-blur-sm mb-8 sm:mb-12 mx-2">
@@ -679,7 +591,14 @@ function App() {
             </div>
           </div>
           
-          <Button size="lg" className="text-lg sm:text-2xl px-8 py-6 sm:px-16 sm:py-8 bg-white text-purple-600 hover:bg-gray-100 mb-4 sm:mb-6 w-full sm:w-auto">
+          <Button 
+            size="lg" 
+            className="text-lg sm:text-2xl px-8 py-6 sm:px-16 sm:py-8 bg-white text-purple-600 hover:bg-gray-100 mb-4 sm:mb-6 w-full sm:w-auto"
+            onClick={() => {
+              console.log('🎯 Scrolling para seção de planos...');
+              document.getElementById('planos')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             🚀 Começar Minha Jornada Agora
           </Button>
           
@@ -745,4 +664,3 @@ function App() {
 }
 
 export default App
-
