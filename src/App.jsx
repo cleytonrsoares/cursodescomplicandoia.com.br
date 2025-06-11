@@ -45,7 +45,8 @@ function App() {
     return () => clearTimeout(timer);
   }, [])
 
-  if (!mounted) return nul  const testimonials = [
+  if (!mounted) return null;
+  const testimonials = [
     {
       name: "Maria Silva, São Paulo",
       text: "Nunca imaginei que já usava IA! Agora converso com o ChatGPT todos os dias e impressiono meus netos!",
