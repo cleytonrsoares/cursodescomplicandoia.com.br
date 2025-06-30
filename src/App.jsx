@@ -657,7 +657,7 @@ function App() {
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-lg">
             <p>&copy; 2024 Descomplicando IA. Todos os direitos reservados.</p>
-<p className="text-sm mt-2">CLEYTON RIBEIRO SOARES SERVIÇOS ADMINISTRATIVOS - CNPJ: 09.640.600/0001-99</p>
+            <p className="text-sm mt-2">CLEYTON RIBEIRO SOARES SERVIÇOS ADMINISTRATIVOS - CNPJ: 09.640.600/0001-99</p>
 
           </div>
         </div>
